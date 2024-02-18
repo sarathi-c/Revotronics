@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revotronics</title>
+    <link rel="icon" type="image/x-icon" href="../static/img/rogo.png">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/skin.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        body {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.6) url('../static/img/bg_img.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-blend-mode: darken;
+        }
+        dotlottie-player {
+            margin: 0 auto;
+        }
+        a:hover {
+            color: white;
+            text-decoration: none;
+        }
+        b {
+            color: lightgreen;
+            font-size: 20px;
+        }
+        span {
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        center {
+            margin-top: -80px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+        <dotlottie-player src="https://lottie.host/6ed73cf0-ab6e-4ed9-adf0-13521f989640/zb95T2Hale.json" background="transparent" speed="1" style="width: 300px; height: 300px;" autoplay></dotlottie-player>
+        <center><b>You Already Paid!</b><br><br><br>
+        <b>Please check your email for further instructions.</b><br>
+        <span>To Participate in Paper Presentation</span><br>
+        <a href="{% url 'registration' %}" id="registerHeroButton" class="btn-large myGradientRotationAnimation">CLICK HERE</a><br>
+        <span>Join the whatsapp group for further updates</span><br>
+        <a href="https://chat.whatsapp.com/LRaeJjqR8LfLP3hpGxWbHt" id="registerHeroButton" class="btn-large myGradientRotationAnimation" target="_blank">Whatsapp</a><br>
+        <a href="{% url 'home' %}" id="registerHeroButton" class="btn-large myGradientRotationAnimation">Home</a>
+    </center>
+    </div>
+</body>
+</html>

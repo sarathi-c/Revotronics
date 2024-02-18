@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revotronics</title>
+    <link rel="icon" type="image/x-icon" href="../static/img/rogo.png">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600&display=swap" rel="stylesheet">
+    <link href="{% static 'vendors/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/skin.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/notPC.css' %}" rel="stylesheet" />
+    <link href="{% static 'vendors/counter/flipdown.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+</head>
+<body id="bdy">
+
+    <img class="bg_clip" src="../static/img/backup_bg.png" alt="img">
+
+    <br>
+    <!-- Hero div -->
+    {% if request.user.is_authenticated %}
+    <div class="move_right dropdown">
+        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{name}}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="{% url 'logout' %}">Log Out</a>
+        </div>
+    </div><br><br><br>
+    {% else %}
+    <div class="move_right">
+        <a href="{% url 'login' %}" class="btn btn-outline-info">LOGIN</a>
+    </div><br><br><br>
+    {% endif %}
+    <div class="container">
+        <div id="herotext">
+            <div data-aos="fade-down" data-aos-once="true" data-aos-duration="1000">
+                <h3 style="color: white;font-weight: bolder;">ELECTRONICS AND COMMUNICATION ENGINEERING</h3>
+                <h3 style="color: white;font-family: 'Sofia Sans Extra Condensed', sans-serif;font-size: 30px;">PROUDLY PRESENTS</h3><br>
+            </div>
+            <div data-aos="zoom-in" data-aos-once="true" data-aos-duration="1000" id="img_part">
+                <h3 style="color: lightseagreen;"><b>A NATIONAL LEVEL TECHNICAL SYMPOSIUM</b></h3><br>
+
+                <h1 class="logo extraBold" style="-webkit-text-stroke:0px transparent;"><b>REVOTRONICS</b></h1>
+                <h1 style="color: lightseagreen;font-size: 50px;font-family: 'Exo 2', sans-serif;"><b>2024</b></h1>
+            </div><br>
+            <div data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" id="reg_part">
+                <a id="registerHeroButton" class="btn-large myGradientRotationAnimation" href="{% url 'payment' %}">Register Now</a>
+                <a href="#eventcards" id="registerHeroButton" class="btn-large myGradientRotationAnimation">Explore Events</a><br>
+                <h5 style="color: yellow;font-weight: bolder;">Please open the website in external browser not in instagram browser</h5><br>
+                <div class="myFlex" id="socialMediaSection">
+                    <i onclick="window.open('https://www.instagram.com/revotronics_/', '_blank').focus();" class="socialMediaIcons bi bi-instagram gradient1"></i>
+                    <i onclick="window.open('https://goo.gl/maps/4pcpvt7NP187tNDn6', '_blank').focus();" class="socialMediaIcons bi bi-geo-alt-fill gradient1"></i>
+                    <i onclick="window.open('https://rectransport.com/', '_blank').focus();" class="socialMediaIcons bx bx-bus gradient1"></i>
+                </div>
+            </div>
+        </div>
+    </div><br><br><br>
+
+    <div id="aboutdiv" class="container">
+        <h2 align="center" class="extraBold gradient0">About REC</h2>
+        <p class="columnText">
+            Rajalakshmi Engineering College is an autonomous Institution affiliated with Anna University, which was established in the year 1997. As a proud Institution with 26 years of academic excellence, it has been ranked as the third most preferred private Engineering college in Tamil Nadu. This Institution has been consistently providing high quality professionals by offering 19 UG, 11 PG courses, and Management studies along with a school of architecture and a school of nursing.
+        </p>
+    </div><br><br><br>
+
+    <div class="container">
+        <h2 align="center" class="extraBold gradient0">About ECE</h2>
+        <p class="columnText">
+            The Department of Electronics and Communication Engineering was established in the year 1997. This Department offers cutting-edge programs in Undergraduate, Post Graduate, and Ph.D. The Department of ECE has been cultivating a culture of research orientation in its students from the very beginning, thereby felicitating the development of high-caliber researchers. More than 95% of the eligible students of ECE are being placed in reputed companies every year. This department has been consistently producing globally competent Electronics and Communication Engineers since its inception. 
+        </p>
+    </div><br><br><br>
+
+    <!-- About div -->
+    <div class="container">
+        <h2 align="center" class="extraBold gradient0">About the Event</h2><br>
+        <div class="row justify-content-between">
+            <div class="col-md-6 text-center">
+                <img onclick="openInNewTab('../static/img/MAIN POSTER.png')" src="../static/img/MAIN POSTER.png" class="columnImage" style="position:relative;z-index:10015;margin-top: 7%;" />
+            </div>
+            <div class="col-md-6 columnText">
+                <p>
+                    Revotronics is a National level technical symposium that is conducted every year by the Department of Electronics and Communication Engineering. This symposium serves as a platform for discussing upcoming trends, exploring the latest technological advancements, and sharing innovative research. Imagine a world where technical prowess meets boundless fun. Here are 10 events spanning various domains that infuse technology with excitement and joy. All these events will feature guest speakers and experts who will share their knowledge and insights with the attendees. This symposium plays a crucial role in bridging the academic and industrial gap which contributes to the advancement of innovation and technology in Electronics and Communication Engineering.
+                </p>
+            </div>
+        </div>
+    </div><br><br><br>
+
+
+
+    <!-- Event List -->
+    <div id="eventcards"></div>
+    <h2 class="myHeader extraBold gradient0">Events</h2>
+    <br><br>
+    <div class="container">
+        <div id="events">
+            <div class="card card0">
+                <img src="../static/img/poster_0.png" alt="event">
+                <div class="content">
+                    <h3>Paper Presentation</h3><br>
+                    <p>This paper presentation elucidates a comprehensive analysis through an innovative lens, highlighting its implications for Electronics and Communication and related fields.</p>
+                    <button style="color: white;" onclick="window.location.assign('{% url "paper_presentation" %}')" class="btn extraBold knowmore" style="margin:1rem;">Know more <i class="bi bi-arrow-up-right-square-fill"></i></button>
+                </div>
+            </div>
+            <div class="card card1">
+                <img src="../static/img/poster_1.png" alt="event">
+                <div class="content">
+                    <h3>Guesstronics</h3><br>
+                    <p>An entertaining event that tests your tech knowledge and quick thinking. So bring out the creative thinker in you by connecting the dots.</p>
+                    <button style="color: white;" onclick="window.location.assign('{% url "guesstronics" %}')" class="btn extraBold knowmore" style="margin:1rem;">Know more <i class="bi bi-arrow-up-right-square-fill"></i></button>
+                </div>
+            </div>
+            <div class="card card2">
+                <img src="../static/img/poster_2.png" alt="event">
+                <div class="content">
+                    <h3>ElectroSwaggers</h3><br>
+                    <p>Electroswaggers is a technical event that tests participants’ knowledge of electronics through practical challenges and theoretical assessments.</p>
+                    <button style="color: white;" onclick="window.location.assign('{% url "electroswaggers" %}')" class="btn extraBold knowmore" style="margin:1rem;">Know more <i class="bi bi-arrow-up-right-square-fill"></i></button>
+                </div>
+            </div>
+            <div class="card card3">
+                <img src="../static/img/poster_3.png" alt="event">
+                <div class="content">
+                    <h3>ElectroQuest</h3><br>
+                    <p>This event challenges participants in various aspects of electronics, including logic gate identification, soldering, and circuit design. It offers a platform for enthusiasts to demonstrate their skills and knowledge in the field.</p>
+                    <button style="color: white;" onclick="window.location.assign('{% url "electroquest" %}')" class="btn extraBold knowmore" style="margin:1rem;">Know more <i class="bi bi-arrow-up-right-square-fill"></i></button>
+                </div>
+            </div>
+            <div class="card card4">
+                <img src="../static/img/poster_4.png" alt="event">
+                <div class="content">
+                    <h3>CS2 - Code Scramble Showdown</h3><br>
+                    <p>Get ready for an exceptional code-breaking challenge! The "CS2 - Code Scramble Showdown" will test your reverse engineering skills.</p>
+                    <button style="color: white;" onclick="window.location.assign('{% url "cs2" %}')" class="btn extraBold knowmore" style="margin-top:1rem;">Know more <i class="bi bi-arrow-up-right-square-fill"></i></button>
+                </div>
+            </div>
+            <div class="card card5">
+                <img src="../static/img/Bid Wars.png" alt="event">
+                <div class="content">
+                    <h3>Bid Wars</h3><br>
+                    <p>Get ready to flaunt your financial finesse at our IPL Auction event. Compete with the best and turn every penny into a powerhouse player.</p>
+                    <button style="color: white;" onclick="window.location.assign('{% url "bidwars" %}')" class="btn extraBold knowmore" style="margin:1rem;">Know more <i class="bi bi-arrow-up-right-square-fill"></i></button>
+                </div>
+            </div>
+            <div class="card card6">
+                <img src="../static/img/Fun O Pedia.png" alt="event">
+                <div class="content">
+                    <h3>Fun o’Pedia</h3><br>
+                    <p>An event aimed to achieve fun based skill testing, which includes intensive thinking, general knowledge and basic mathematical and logical skills. The event divides into 3-levels, subsequntly shorting down on 2 or 3 winners.</p>
+                    <button style="color: white;" onclick="window.location.assign('{% url "funopedia" %}')" class="btn extraBold knowmore" style="margin:1rem;">Know more <i class="bi bi-arrow-up-right-square-fill"></i></button>
+                </div>
+            </div>
+            <div class="card card7">
+                <img src="../static/img/Guess work.png" alt="event">
+                <div class="content">
+                    <h3>Guess Work</h3><br>
+                    <p>This event focuses on creativity.It enhances teamwork,artistic skills, and imagination.This dynamic will exercise your mind while promoting social engagement!!This consists of two rounds to determine who has that freaking creativity skills!</p>
+                    <button style="color: white;" onclick="window.location.assign('{% url "guesswork" %}')" class="btn extraBold knowmore" style="margin:1rem;">Know more <i class="bi bi-arrow-up-right-square-fill"></i></button>
+                </div>
+            </div>
+            <div class="card card8">
+                <img src="../static/img/Rhetorix Debate.png" alt="event">
+                <div class="content">
+                    <h3>Debate - Rhetorix</h3><br>
+                    <p>Get ready to present your perspective in the battle of Rhetorix.</p>
+                    <button style="color: white;" onclick="window.location.assign('{% url "debate" %}')" class="btn extraBold knowmore" style="margin:1rem;">Know more <i class="bi bi-arrow-up-right-square-fill"></i></button>
+                </div>
+            </div>
+            <div class="card card9">
+                <img src="../static/img/Rhym redux.png" alt="event">
+                <div class="content">
+                    <h3>Rhyme Redux: A Two-Round Ballad Adventure</h3><br>
+                    <p>A music game show testing linguistic process with translated lyrics and short song snippets.</p>
+                    <button style="color: white;" onclick="window.location.assign('{% url "rhymeredux" %}')" class="btn extraBold knowmore" style="margin:1rem;">Know more <i class="bi bi-arrow-up-right-square-fill"></i></button>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+
+    <h2 class="myHeader extraBold gradient0">General Guidelines</h2><br>
+    <div class="generalDiv" style="width:max-content;max-width:90%;margin:auto;position:relative;z-index: 10001;">
+        1.150 rupees is the registration fee per head for the entire event.<br><br>
+        2.Only registered participants will be allowed to attend the event , on spot registrations will not be entertained.<br><br>
+        3.It is mandatory for the participants to provide their college ID at the help desk for verification.<br><br>
+        4.Proper dress code should be followed by the participants.<br><br>
+        5.A participant is not restricted to participation in any number of events as long as the event timings do not clash.<br><br>
+        6.All the events will commence at the scheduled time, participants are requested to be punctual.<br><br>
+        7.Participants are requested to collect the event tag from the help desk present in the workshop block.<br><br>
+        8.No refund on the registration fees will be encouraged.<br><br>
+        9.Students should refrain from using abusive language, obscene display and maintain good decorum.<br><br>
+        10.Smoking, consumption of alcohol or any such substance is strictly prohibited inside the college premises.<br><br>
+        11.Rules are subject to changes at the discretion of the management or the event organisers.<br><br>
+        12.Transport facilities via the college buses will be provided. Please refer to <a href="https://rectransport.com/" target="_blank">www.rectransport.com</a> for bus timings.
+    </div><br><br>
+
+    <!-- Co ordinator List -->
+    <h2 class="myHeader extraBold gradient0">Contacts</h2><br>
+    <div style="color: white;" class="row justify-content-center">
+        <div class="col-md-4 text-center">
+            <h5 class="myHeader extraBold gradient0">Student Co-ordinators:</h5><br>
+            <h5 class="extraBold">JEGAN P</h5><br>
+            <h5 class="extraBold">SUDARVEL K</h5><br>
+            <h5 class="extraBold">DANIEL S</h5><br>
+            <h5 class="extraBold">DEEPTHI P A</h5><br><br>
+            <h5 class="myHeader extraBold gradient0">Events Head:</h5><br>
+            <h5 class="extraBold">HARIKARTHIKEYAN A</h5><br><br>
+
+        </div>
+        <div class="col-md-4 text-center">
+            <h3 class="myHeader extraBold gradient0">Help Desk:</h3><br>
+            <h5 class="extraBold">SRIVIDHYA S</h5>
+            <h6>9080573144</h6><br>
+            <h5 class="extraBold">SREENIDHI P</h5>
+            <h6>8248134935</h6><br>
+            <h5 class="extraBold">Gayathri P</h5>
+            <h6>7904432828</h6><br>
+            <h5 class="extraBold">Harini N</h5>
+            <h6>9003331144</h6><br>
+        </div>
+        <div class="col-md-4 text-center">
+            <h5 class="myHeader extraBold gradient0">Website Developed By:</h5><br>
+            <h5 class="extraBold">DHINESHWARAN C</h5><br>
+            <h5 class="extraBold">KUMARESH A</h5><br>
+            <h5 class="extraBold">SARATHI</h5><br>
+            <h5 class="extraBold">VISHAL PRASAD R</h5>
+        </div>
+    </div><br><br>
+    <div class="myfooter">
+        <span  class="footer"style="display:block;color:white;margin:auto;font-weight: 600;width: max-content;max-width: 90%;">Sponsored by</span><br><br>
+        <img src="../static/img/reclogo.png" style="display:block;width: max-content; max-width: 90%;margin:auto;" />
+        <br>
+    </div>
+   
+    <script src="{% static 'vendors/counter/flipdown.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
